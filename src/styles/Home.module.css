@@ -34,6 +34,18 @@
   border-radius: var(--border-radius);
 }
 
+.description h1 {
+  position: relative;
+  text-align: center;
+  font-size: 2rem;
+  color: #c46aba;
+  margin: 0 auto;
+  padding: 1rem;
+  background-color: rgba(var(--callout-rgb), 0.5);
+  border: 1px solid rgba(var(--callout-border-rgb), 0.3);
+  border-radius: var(--border-radius);
+}
+
 .code {
   font-weight: 700;
   font-family: var(--font-mono);
