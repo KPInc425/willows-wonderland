@@ -12,11 +12,11 @@ const Heading1 = styled.h1`
 `
 
 
-const HeadingLabel = ()=> {
+const HeadingLabel = ({ label })=> {
     
     return (
         <HeaderWrapper className={styles.description}>
-            <Heading1>Willows Wonderland</Heading1>
+            <Heading1>{ label }</Heading1>
         </HeaderWrapper>
     )
 }

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import ArtworkDetail from './ArtworkDetail';
 import HeadingLabel from './HeadingLabel';
+import styles from '@/styles/Home.module.css'
 
 const GalleryWrapper = styled.div`
   display: flex;
@@ -36,19 +37,27 @@ const GalleryItem = styled.div`
   }
 `;
 
+const NavLink = ({ label, destination }) => {
+  return (
+    <a href={ destination }>
+      <p>{ label }</p>
+    </a>
+  )
+};
+
 const Gallery = () => {
   const [artworks, setArtworks] = useState([]);
   const [clickedArtwork, setClickedArtwork] = useState(null);
   const [isOpen, setIsOpen] = useState(false);
 
-  useEffect(() => {
-    // Fetch the artist's artworks from an API or a local JSON file
-    // and set the state with the data
-    fetch('https://jsonplaceholder.typicode.com/photos')
-      .then((response) => response.json())
-      .then((data) => setArtworks(data))
-      .catch((error) => console.log(error));
-  }, []);
+  // useEffect(() => {
+  //   // Fetch the artist's artworks from an API or a local JSON file
+  //   // and set the state with the data
+  //   fetch('https://jsonplaceholder.typicode.com/photos')
+  //     .then((response) => response.json())
+  //     .then((data) => setArtworks(data))
+  //     .catch((error) => console.log(error));
+  // }, []);
 
   const handleClick = (artwork) => {
     setClickedArtwork(artwork);
@@ -63,7 +72,11 @@ const Gallery = () => {
 
   return (
     <div onClick={clearDetails}>
-      <HeadingLabel />
+      <div className={styles.description} style={{display: "flex", flexWrap: "wrap", justifyContent: "center", columnGap: "1rem", alignItems: "flex-end"}}>
+        <NavLink label={ "Home" } destination={"/"} />
+        <HeadingLabel label={ "Willow's Wonderland" } />
+        <NavLink label={ "Shop" } destination={"/shop"} />
+      </div>
       <GalleryWrapper>
         {artworks.map((artwork) => (
           <GalleryItem 
