@@ -72,7 +72,7 @@ const Gallery = () => {
 
   return (
     <div onClick={clearDetails}>
-      <div className={styles.description} style={{display: "flex", flexWrap: "wrap", justifyContent: "center", columnGap: "1rem", alignItems: "flex-end"}}>
+      <div className={styles.description} style={{display: "flex", flexWrap: "wrap", margin: "0 auto", justifyContent: "center", columnGap: "1rem", alignItems: "flex-end"}}>
         <NavLink label={ "Home" } destination={"/"} />
         <HeadingLabel label={ "Willow's Wonderland" } />
         <NavLink label={ "Shop" } destination={"/shop"} />
