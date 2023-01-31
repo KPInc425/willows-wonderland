@@ -50,14 +50,14 @@ const Gallery = () => {
   const [clickedArtwork, setClickedArtwork] = useState(null);
   const [isOpen, setIsOpen] = useState(false);
 
-  // useEffect(() => {
-  //   // Fetch the artist's artworks from an API or a local JSON file
-  //   // and set the state with the data
-  //   fetch('https://jsonplaceholder.typicode.com/photos')
-  //     .then((response) => response.json())
-  //     .then((data) => setArtworks(data))
-  //     .catch((error) => console.log(error));
-  // }, []);
+  useEffect(() => {
+    // Fetch the artist's artworks from an API or a local JSON file
+    // and set the state with the data
+    fetch('https://jsonplaceholder.typicode.com/photos')
+      .then((response) => response.json())
+      .then((data) => setArtworks(data))
+      .catch((error) => console.log(error));
+  }, []);
 
   const handleClick = (artwork) => {
     setClickedArtwork(artwork);

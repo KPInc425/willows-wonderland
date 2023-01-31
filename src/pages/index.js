@@ -3,6 +3,7 @@ import Image from 'next/image'
 import { Inter } from '@next/font/google'
 import styles from '@/styles/Home.module.css'
 import HeadingLabel from '@/components/HeadingLabel'
+import Link from 'next/link'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -10,7 +11,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Willow's Worx</title>
+        <title>{ "Willow's Worx" }</title>
         <meta name="description" content="Art" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
@@ -41,7 +42,7 @@ export default function Home() {
         </div>
 
         <div className={styles.grid}>
-          <a
+          <Link
             href="/gallery"
             as="/artworks"
             className={styles.card}
@@ -53,9 +54,9 @@ export default function Home() {
             <p className={inter.className}>
               Check out all her latest worx!
             </p>
-          </a>
+          </Link>
 
-          <a
+          <Link
             href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
             className={styles.card}
             target="_blank"
@@ -67,7 +68,7 @@ export default function Home() {
             <p className={inter.className}>
               Learn about Next.js in an interactive course with&nbsp;quizzes!
             </p>
-          </a>
+          </Link>
 
           <a
             href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
@@ -83,7 +84,7 @@ export default function Home() {
             </p>
           </a>
 
-          <a
+          <Link
             href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
             className={styles.card}
             target="_blank"
@@ -96,7 +97,7 @@ export default function Home() {
               Instantly deploy your Next.js site to a shareable URL
               with&nbsp;Vercel.
             </p>
-          </a>
+          </Link>
         </div>
       </main>
     </>
